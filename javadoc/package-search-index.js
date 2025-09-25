@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"example.speedw","l":"example.speedw"},{"m":"example.speedw","l":"example.speedw.controllers"},{"m":"example.speedw","l":"example.speedw.models"}];updateSearchResults();

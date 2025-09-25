@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"example.speedw.models","l":"AlertBox"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"example.speedw","l":"App"},{"p":"example.speedw.controllers","l":"GameController"},{"p":"example.speedw.models","l":"IAlertBox"},{"p":"example.speedw","l":"Launcher"},{"p":"example.speedw.controllers","l":"WelcomeController"}];updateSearchResults();
