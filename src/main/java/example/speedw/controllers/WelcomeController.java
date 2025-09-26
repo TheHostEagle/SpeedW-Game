@@ -14,45 +14,45 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * Controlador para la vista de bienvenida de la aplicación (welcome.fxml).
+ * Controlador para la vista de bienvenida de la aplicacion (welcome.fxml).
  * <p>
- * Gestiona la lógica y los eventos de la pantalla inicial, incluyendo la carga
- * de imágenes, la visualización de instrucciones y el inicio de la transición
+ * Gestiona la logica y los eventos de la pantalla inicial, incluyendo la carga
+ * de imagenes, la visualizacion de instrucciones y el inicio de la transicion
  * hacia la ventana principal del juego.
  *
  * @author Santiago Duque
  * @version 1.0
- * @since 2025-09-23
+ * @since 2025-09-22
  */
 public class WelcomeController
 {
     /**
-     * Contenedor para mostrar la imagen o ícono principal en la vista.
+     * Contenedor para mostrar la imagen o icono principal en la vista.
      */
     @FXML
     private ImageView imageIcon1;
 
     /**
-     * Botón que, al ser presionado, muestra las instrucciones del juego.
+     * Boton que, al ser presionado, muestra las instrucciones del juego.
      */
     @FXML
     private Button instructionButton;
 
     /**
-     * Botón que inicia el juego y cambia a la ventana principal.
+     * Boton que inicia el juego y cambia a la ventana principal.
      */
     @FXML
     private Button startButton;
 
     /**
-     * Referencia a la clase principal de la aplicación para permitir la comunicación.
+     * Referencia a la clase principal de la aplicacion para permitir la comunicacion.
      */
     private App mainApp;
 
     /**
-     * Inicializa el controlador después de que su elemento raíz ha sido procesado.
+     * Inicializa el controlador despues de que su elemento raiz ha sido procesado.
      * <p>
-     * Este método es llamado automáticamente por el {@code FXMLLoader} y se utiliza
+     * Este metodo es llamado automaticamente por el {@code FXMLLoader} y se utiliza
      * para realizar configuraciones iniciales, como cargar la imagen principal
      * en el {@code ImageView}.
      */
@@ -64,34 +64,34 @@ public class WelcomeController
     }
 
     /**
-     * Maneja el evento de clic del botón de instrucciones.
+     * Maneja el evento de clic del boton de instrucciones.
      * <p>
-     * Muestra un cuadro de diálogo de alerta con las reglas y el objetivo del juego.
+     * Muestra un cuadro de dialogo de alerta con las reglas y el objetivo del juego.
      */
     @FXML
     public void instButton()
     {
         AlertBox alertBox = new AlertBox();
-        alertBox.showAlertBox("\uD835\uDC08\uD835\uDC0D\uD835\uDC12\uD835\uDC13\uD835\uDC11\uD835\uDC14\uD835\uDC02\uD835\uDC02\uD835\uDC08\uD835\uDC0E\uD835\uDC0D\uD835\uDC04\uD835\uDC12",
-                "\uD835\uDC0E\uD835\uDC1B\uD835\uDC23\uD835\uDC1E\uD835\uDC2D\uD835\uDC22\uD835\uDC2F\uD835\uDC28: Escribe la frase que aparece en pantalla exactamente igual antes de que el tiempo se acabe.\n\n" +
-                        "\uD835\uDC02\uD835\uDC28́\uD835\uDC26\uD835\uDC28 \uD835\uDC23\uD835\uDC2E\uD835\uDC20\uD835\uDC1A\uD835\uDC2B:\n" +
-                        "- Escribe la frase en el área de texto.\n" +
-                        "- Presiona Enter o el botón Validar para verificar.\n\n"+
-                        "\uD835\uDC11\uD835\uDC04\uD835\uDC06\uD835\uDC0B\uD835\uDC00\uD835\uDC12:\n"+
-                        "❌ Si el tiempo se acaba o escribes incorrectamente, pierdes y vuelves al Nivel 1.\n" +
+        alertBox.showAlertBox("INSTRUCCIONES",
+                "OBJETIVO: Escribe la frase que aparece en pantalla exactamente igual antes de que el tiempo se acabe.\n\n" +
+                        "COMO JUGAR:\n" +
+                        "- Escribe la frase en el area de texto.\n" +
+                        "- Presiona Enter o el boton Validar para verificar.\n\n"+
+                        "REGLAS:\n"+
+                        "\u2717 Si el tiempo se acaba o escribes incorrectamente, pierdes y vuelves al Nivel 1.\n" +
                         "✅ Cada 5 niveles, el tiempo se reduce 2 segundos (desde 20s) hasta un mínimo de 6s.\n" +
-                        "\uD83C\uDFC6 ¡Ganas al superar el nivel de 6 segundos!",
-                "\uD83C\uDD42\uD83C\uDD3F\uD83C\uDD34\uD83C\uDD34\uD83C\uDD33 \uD83C\uDD46"
+                        "\u272A ¡Ganas al superar el nivel de 6 segundos!",
+                "|S|P|E|E|D|  |W|"
         );
     }
 
     /**
-     * Maneja el evento de clic del botón para iniciar el juego.
+     * Maneja el evento de clic del boton para iniciar el juego.
      * <p>
-     * Invoca el método {@code newWindow} de la clase principal {@link App} para
+     * Invoca el metodo {@code newWindow} de la clase principal {@link App} para
      * cerrar la ventana de bienvenida y abrir la ventana del juego.
      *
-     * @param event El evento de acción generado por el clic del botón.
+     * @param event El evento de accion generado por el clic del boton.
      */
     @FXML
     public void  gameWindowButton(ActionEvent event)
@@ -100,9 +100,9 @@ public class WelcomeController
         {
             try
             {
-                // Obtenemos la ventana actual desde el botón
+                // Obtenemos la ventana actual desde el boton
                 Stage currentStage = (Stage) startButton.getScene().getWindow();
-                // Llamamos al método newWindow() de la clase App
+                // Llamamos al metodo newWindow() de la clase App
                 mainApp.newWindow(currentStage);
             }
             catch (IOException e)
@@ -114,13 +114,13 @@ public class WelcomeController
     }
 
     /**
-     * Establece la referencia a la instancia principal de la aplicación.
+     * Establece la referencia a la instancia principal de la aplicacion.
      * <p>
-     * Este método es utilizado por la clase {@link App} para "inyectar" su propia
+     * Este metodo es utilizado por la clase {@link App} para "inyectar" su propia
      * instancia en este controlador, permitiendo que el controlador pueda invocar
-     * métodos públicos de la clase principal, como {@code newWindow}.
+     * metodos publicos de la clase principal, como {@code newWindow}.
      *
-     * @param apl La instancia principal de la aplicación.
+     * @param apl La instancia principal de la aplicacion.
      */
     public void setApp(App apl)
     {
